@@ -471,4 +471,416 @@ img {
 /* Installation Section */
 .installation {
     padding: 100px 0;
-    backgroun
+    background-color: var(--light-color);
+}
+
+.installation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 30px;
+}
+
+.installation-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.installation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.installation-card h3 {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 20px;
+    font-size: 1.4rem;
+}
+
+.installation-content {
+    padding: 20px;
+}
+
+.installation-content h4 {
+    font-size: 1.1rem;
+    margin: 20px 0 15px;
+    color: var(--dark-color);
+}
+
+.installation-content h4:first-child {
+    margin-top: 0;
+}
+
+.installation-steps {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.installation-steps li {
+    margin-bottom: 10px;
+    color: var(--gray-dark);
+}
+
+.installation-content code {
+    background-color: var(--gray-light);
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-family: 'Fira Code', 'Courier New', Courier, monospace;
+    font-size: 14px;
+}
+
+.installation-content pre {
+    background-color: #1a202c;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 15px 0;
+}
+
+.installation-content pre code {
+    background-color: transparent;
+    color: #e2e8f0;
+    padding: 0;
+}
+
+.api-test {
+    white-space: pre-wrap;
+}
+
+/* Sample Components Section */
+.samples {
+    padding: 100px 0;
+    background-color: white;
+}
+
+.sample {
+    margin-bottom: 50px;
+}
+
+.sample:last-child {
+    margin-bottom: 0;
+}
+
+.sample h3 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    color: var(--dark-color);
+}
+
+.sample-code {
+    background-color: #1a202c;
+    border-radius: 8px;
+    padding: 20px;
+    overflow: auto;
+}
+
+.sample-code pre {
+    margin: 0;
+}
+
+.sample-code code {
+    color: #e2e8f0;
+    font-family: 'Fira Code', 'Courier New', Courier, monospace;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Security Section */
+.security {
+    padding: 100px 0;
+    background-color: var(--light-color);
+}
+
+.security-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.security-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.security-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.security-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.security-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: var(--dark-color);
+}
+
+.security-card p {
+    color: var(--gray-dark);
+}
+
+/* Contributing Section */
+.contributing {
+    padding: 100px 0;
+    background-color: white;
+}
+
+.contributing-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--light-color);
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: var(--box-shadow);
+}
+
+.contributing-steps {
+    counter-reset: step;
+    margin-bottom: 40px;
+}
+
+.contributing-steps li {
+    position: relative;
+    padding-left: 50px;
+    margin-bottom: 30px;
+    counter-increment: step;
+}
+
+.contributing-steps li:last-child {
+    margin-bottom: 0;
+}
+
+.contributing-steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 35px;
+    height: 35px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.step-title {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--dark-color);
+}
+
+.contributing-steps li p {
+    color: var(--gray-dark);
+}
+
+.contributing-steps li code {
+    background-color: var(--gray-light);
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-family: 'Fira Code', 'Courier New', Courier, monospace;
+    font-size: 14px;
+}
+
+.contribute-button {
+    text-align: center;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.footer-brand h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.footer-brand p {
+    color: var(--gray-color);
+}
+
+.footer-social {
+    display: flex;
+    gap: 20px;
+}
+
+.social-link {
+    font-size: 1.5rem;
+    color: var(--gray-color);
+    transition: var(--transition);
+}
+
+.social-link:hover {
+    color: white;
+    transform: translateY(-3px);
+}
+
+.footer-copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    text-align: center;
+    color: var(--gray-color);
+    font-size: 0.9rem;
+}
+
+/* Active navigation item */
+.navbar-menu ul li a.active {
+    color: var(--primary-color);
+}
+
+.navbar-menu ul li a.active::after {
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .hero {
+        padding: 130px 0 80px;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .component-block {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .component-block.reversed {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .navbar-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 80%;
+        height: calc(100vh - 70px);
+        background-color: white;
+        box-shadow: var(--box-shadow);
+        transition: var(--transition);
+        padding: 30px;
+    }
+
+    .navbar-menu.active {
+        left: 0;
+    }
+
+    .navbar-menu ul {
+        flex-direction: column;
+    }
+
+    .navbar-menu ul li {
+        margin: 0 0 20px 0;
+    }
+
+    .navbar-toggle {
+        display: flex;
+    }
+
+    .navbar-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .navbar-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .hero-content {
+        flex-direction: column;
+    }
+
+    .hero-text, .hero-image {
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .features-grid, .use-cases-grid, .security-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .installation-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .contributing-content {
+        padding: 20px;
+    }
+
+    .installation-steps {
+        padding-left: 15px;
+    }
+
+    .component-features {
+        padding-left: 10px;
+    }
+
+    .component-features li {
+        padding-left: 15px;
+    }
+}
