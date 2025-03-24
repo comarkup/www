@@ -1,7 +1,5 @@
 # CoMarkup
 
-# CoMarkup
-
 CoMarkup is a real-time code collaboration platform that enables instant rendering and preview of changes in various markup formats (Markdown, HTML, React). The project consists of two main components:
 
 1. **[Firefox Plugin](https://github.com/comarkup/firefox)** - a browser extension that detects and renders React code
