@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoMarkup - Real-time Code Collaboration Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="#"><span class="logo">CoMarkup</span></a>
+            </div>
+            <div class="navbar-menu" id="navMenu">
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#use-cases">Use Cases</a></li>
+                    <li><a href="#installation">Installation</a></li>
+                    <li><a href="#samples">Samples</a></li>
+                </ul>
+            </div>
+            <div class="navbar-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>CoMarkup</h1>
+                    <p>Real-time code collaboration platform with instant rendering</p>
+                    <div class="hero-buttons">
+                        <a href="https://github.com/comarkup/firefox" class="btn btn-light">
+                            <i class="fab fa-firefox"></i> Firefox Plugin
+                        </a>
+                        <a href="https://github.com/comarkup/render-react" class="btn btn-outline">
+                            <i class="fab fa-react"></i> Render Server
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://via.placeholder.com/600x400" alt="CoMarkup Preview">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Instant Rendering</h3>
+                    <p>Preview React components in real-time without needing to build your project.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Real-time Collaboration</h3>
+                    <p>Edit and render code together with team members.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Git Synchronization</h3>
+                    <p>Integration with Git repositories for efficient workflow.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Responsive Preview</h3>
+                    <p>Check how your components look on different devices.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Custom Themes</h3>
+                    <p>Customize the editor appearance to your preferences.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔌</div>
+                    <h3>Browser Extensions</h3>
+                    <p>Use CoMarkup directly in your browser.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            
+            <div class="component-block">
+                <div class="component-info">
+                    <h3>1. Firefox Plugin</h3>
+                    <p>The Firefox plugin automatically detects React code fragments on web pages and adds a "Render" button that opens a popup with the rendered component.</p>
+                    <ul class="component-features">
+                        <li>Automatic React code detection</li>
+                        <li>Code rendering in popup</li>
+                        <li>Copy rendered HTML to clipboard</li>
+                        <li>Rendering error handling</li>
+                    </ul>
+                    <a href="https://github.com/comarkup/firefox" class="link-github">
+                        <i class="fab fa-github"></i> View code on GitHub
+                    </a>
+                </div>
+                <div class="component-code">
+                    <div class="code-header">
+                        <div class="code-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="code-title">Firefox Plugin</div>
+                    </div>
+                    <div class="code-content">
+                        <pre><code>// Automatic React code detection:
+const observer = new MutationObserver((mutations) => {
+  mutations.forEach((mutation) => {
+    if (mutation.addedNodes.length > 0) {
+      mutation.addedNodes.forEach((node) => {
+        if (node.nodeType === Node.ELEMENT_NODE) {
+          const codeBlocks = node.querySelectorAll('pre, code');
+          codeBlocks.forEach(addRenderButton);
+        }
+      });
+    }
+  });
+});</code></pre>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="component-block reversed">
+                <div class="component-code">
+                    <div class="code-header">
+                        <div class="code-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="code-title">Render Server</div>
+                    </div>
+                    <div class="code-content">
+                        <pre><code>// Express server for rendering React components
+const express = require('express');
+const React = require('react');
+const ReactDOMServer = require('react-dom/server');
+
+app.post('/render', (req, res) => {
+  try {
+    const { code } = req.body;
+    // Transform and render React component
+    const component = eval(code);
+    const html = ReactDOMServer.renderToString(
+      React.createElement(component)
+    );
+    res.json({ html });
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+});</code></pre>
+                    </div>
+                </div>
+                <div class="component-info">
+                    <h3>2. Render Server</h3>
+                    <p>A local Express server that processes and renders JavaScript with React. The server takes React component code, compiles it, and returns the rendered HTML.</p>
+                    <ul class="component-features">
+                        <li>Code transformation with Babel</li>
+                        <li>React component rendering</li>
+                        <li>React hooks support</li>
+                        <li>Tailwind CSS support</li>
+                        <li>API communication</li>
+                    </ul>
+                    <a href="https://github.com/comarkup/render-react" class="link-github">
+                        <i class="fab fa-github"></i> View code on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section id="use-cases" class="use-cases">
+        <div class="container">
+            <h2 class="section-title">Use Cases</h2>
+            
+            <div class="use-cases-grid">
+                <div class="use-case-card">
+                    <h3>Development Teams</h3>
+                    <ul class="use-case-list">
+                        <li>Documentation collaboration</li>
+                        <li>Real-time code review</li>
+                        <li>Rapid component prototyping</li>
+                    </ul>
+                </div>
+                
+                <div class="use-case-card">
+                    <h3>Content Creators</h3>
+                    <ul class="use-case-list">
+                        <li>Writing and editing documentation</li>
+                        <li>Creating technical blogs</li>
+                        <li>Preparing tutorials</li>
+                    </ul>
+                </div>
+                
+                <div class="use-case-card">
+                    <h3>Companies</h3>
+                    <ul class="use-case-list">
+                        <li>Product documentation</li>
+                        <li>Internal wikis</li>
+                        <li>Training materials</li>
+                    </ul>
+                </div>
+                
+                <div class="use-case-card">
+                    <h3>Education</h3>
+                    <ul class="use-case-list">
+                        <li>Interactive materials</li>
+                        <li>Student-teacher collaboration</li>
+                        <li>Code presentations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Section -->
+    <section id="installation" class="installation">
+        <div class="container">
+            <h2 class="section-title">Installation and Usage</h2>
+            
+            <div class="installation-grid">
+                <div class="installation-card">
+                    <h3>Firefox Plugin</h3>
+                    <div class="installation-content">
+                        <h4>Temporary Installation:</h4>
+                        <ol class="installation-steps">
+                            <li>Clone the repository <code>git clone https://github.com/comarkup/firefox</code></li>
+                            <li>In Firefox, navigate to <code>about:debugging</code></li>
+                            <li>Click "This Firefox"</li>
+                            <li>Click "Load Temporary Add-on"</li>
+                            <li>Select the <code>manifest.json</code> file from the directory</li>
+                        </ol>
+                        
+                        <h4>Marketplace Installation:</h4>
+                        <ol class="installation-steps">
+                            <li>Visit the <a href="#" class="link">add-on page</a> in Firefox Add-ons</li>
+                            <li>Click "Add to Firefox"</li>
+                            <li>Confirm the installation</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="installation-card">
+                    <h3>Render Server</h3>
+                    <div class="installation-content">
+                        <h4>Installation and Startup:</h4>
+                        <ol class="installation-steps">
+                            <li>Clone the repository <code>git clone https://github.com/comarkup/render-react</code></li>
+                            <li>Grant execution permissions: <code>chmod +x setup.sh</code></li>
+                            <li>Run the installation script: <code>./setup.sh</code></li>
+                            <li>Start the server: <code>npm start</code></li>
+                        </ol>
+                        
+                        <h4>Testing the API:</h4>
+                        <p>Use curl to test the API:</p>
+                        <pre><code class="api-test">curl -X POST \
+  http://localhost:3001/render \
+  -H "Content-Type: application/json" \
+  -d '{"code": "function ExampleComponent() { return React.createElement('\''div'\'', null, '\''Hello'\'') }"}'</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sample Components Section -->
+    <section id="samples" class="samples">
+        <div class="container">
+            <h2 class="section-title">Sample Components</h2>
+            
+            <div class="sample">
+                <h3>Simple Component</h3>
+                <div class="sample-code">
+                    <pre><code>function SimpleComponent() {
+  return (
+    &lt;div className="p-4 bg-blue-100"&gt;
+      &lt;h2 className="text-xl font-bold"&gt;Hello CoMarkup!&lt;/h2&gt;
+      &lt;p&gt;This is a simple React component.&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>
+                </div>
+            </div>
+            
+            <div class="sample">
+                <h3>Component with Hooks</h3>
+                <div class="sample-code">
+                    <pre><code>function TestComponent() {
+  const [count, setCount] = useState(0);
+  
+  return (
+    &lt;div className="p-4 bg-blue-100"&gt;
+      &lt;h1 className="text-xl font-bold"&gt;Counter Component&lt;/h1&gt;
+      &lt;p&gt;Current count: {count}&lt;/p&gt;
+      &lt;button 
+        className="bg-blue-500 text-white px-4 py-2 rounded mt-2"
+        onClick={() => setCount(count + 1)}
+      &gt;
+        Increment
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Section -->
+    <section class="security">
+        <div class="container">
+            <h2 class="section-title">Security Features</h2>
+            
+            <div class="security-grid">
+                <div class="security-card">
+                    <div class="security-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Babel Transformation</h3>
+                    <p>The server performs secure code transformation through Babel, ensuring safe execution of React components.</p>
+                </div>
+                
+                <div class="security-card">
+                    <div class="security-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Verified HTML</h3>
+                    <p>Frontend uses dangerouslySetInnerHTML only for verified HTML that has been processed and validated by the server.</p>
+                </div>
+                
+                <div class="security-card">
+                    <div class="security-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>CORS Implementation</h3>
+                    <p>Secure communication between server and client is ensured through proper CORS (Cross-Origin Resource Sharing) configuration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contributing Section -->
+    <section class="contributing">
+        <div class="container">
+            <h2 class="section-title">Contributing</h2>
+            
+            <div class="contributing-content">
+                <ol class="contributing-steps">
+                    <li>
+                        <span class="step-title">Fork the repository</span>
+                        <p>Create your own copy of the project to work on.</p>
+                    </li>
+                    <li>
+                        <span class="step-title">Create a feature branch</span>
+                        <p>Use <code>git checkout -b feature/amazing-feature</code></p>
+                    </li>
+                    <li>
+                        <span class="step-title">Commit your changes</span>
+                        <p>Use <code>git commit -m 'Add some amazing feature'</code></p>
+                    </li>
+                    <li>
+                        <span class="step-title">Push to the branch</span>
+                        <p>Use <code>git push origin feature/amazing-feature</code></p>
+                    </li>
+                    <li>
+                        <span class="step-title">Open a Pull Request</span>
+                        <p>Submit your changes for review and inclusion in the main project.</p>
+                    </li>
+                </ol>
+                
+                <div class="contribute-button">
+                    <a href="https://github.com/comarkup" class="btn btn-primary">
+                        <i class="fab fa-github"></i> Contribute on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h2>CoMarkup</h2>
+                    <p>Real-time code collaboration platform</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/comarkup/firefox" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://github.com/comarkup/render-react" class="social-link">
+                        <i class="fab fa-react"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2025 CoMarkup. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
